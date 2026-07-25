@@ -1,34 +1,48 @@
-# 🎵 Arduino Disco Countdown with Tetris Theme
+# 🎵 Arduino RFID Smart MP3 Player
 
-An Arduino-based project that combines a 3-2-1 countdown using a 7-segment display with LED lighting effects and a buzzer playing the Tetris theme.
+An Arduino-based RFID Smart MP3 Player that authenticates users using RFID cards and automatically plays personalized audio tracks. The system also includes an LCD interface, manual music controls, LED status indicators, and an interactive Dinosaur Game that activates when the system is idle.
 
 ---
 
-## 📖 Overview
+## 📖 Project Overview
 
-This project demonstrates embedded systems programming using an Arduino Uno. It integrates multiple electronic components to create an interactive countdown and light show.
+This project was developed as a final Arduino project to demonstrate embedded systems programming, RFID authentication, audio playback, and user interaction.
+
+The system recognizes authorized RFID cards, displays the user's name on an LCD screen, and plays an assigned MP3 track using a DFPlayer Mini module. Unauthorized RFID cards trigger an access denied message and an error sound.
+
+To improve user experience, the project also includes an idle-mode Dinosaur Game inspired by the Chrome offline game.
 
 ---
 
 ## ✨ Features
 
-- 3-2-1 countdown
-- LED flashing effects
-- Tetris theme played through a passive buzzer
-- Random 7-segment display animation
-- Automatic looping sequence
+- RFID Card Authentication
+- Personalized User Recognition
+- Automatic MP3 Playback
+- LCD Display Interface
+- Manual Music Controls
+- Volume Control
+- Status LEDs
+- Idle Mode Dinosaur Game
+- Access Control System
+- Error Handling
+- Startup Animation
 
 ---
 
-## 🛠️ Hardware Components
+## 🛠 Hardware Components
 
 - Arduino Uno
-- 3-Digit 7-Segment Display
-- Passive Buzzer
-- 2 LEDs
+- MFRC522 RFID Module
+- RFID Cards / Tags
+- DFPlayer Mini MP3 Module
+- I2C LCD Display (16x2)
+- Passive Speaker
+- Push Buttons
+- LEDs
 - Breadboard
 - Jumper Wires
-- Resistors
+- MicroSD Card
 
 ---
 
@@ -39,65 +53,84 @@ This project demonstrates embedded systems programming using an Arduino Uno. It 
 
 ---
 
-## 📌 Pin Configuration
+## 📚 Libraries Used
 
-| Component | Pin |
-|-----------|----:|
-| Digit 1 | 10 |
-| Digit 2 | 8 |
-| Digit 3 | 7 |
-| Segment A | 11 |
-| Segment B | 12 |
-| Segment C | 13 |
-| Segment D | A0 |
-| Segment E | A1 |
-| Segment F | A2 |
-| Segment G | A3 |
-| LED 1 | 6 |
-| LED 2 | 5 |
-| Buzzer | 4 |
+- SoftwareSerial
+- DFRobotDFPlayerMini
+- LiquidCrystal_I2C
+- SPI
+- MFRC522
 
 ---
 
-## 🚀 How to Run
+## 🔧 Hardware Connections
 
-1. Install the Arduino IDE.
-2. Connect the Arduino Uno.
-3. Open `Arduino_Disco_Countdown.ino`.
-4. Select the correct board and COM port.
-5. Upload the code.
-6. Observe the countdown, LED effects, and melody.
+| Component | Purpose |
+|-----------|---------|
+| MFRC522 | RFID Authentication |
+| DFPlayer Mini | Audio Playback |
+| LCD 16x2 | User Interface |
+| Push Buttons | Track and Volume Controls |
+| LEDs | System Status Indicators |
+| Speaker | Audio Output |
+
+---
+
+## 🚀 System Workflow
+
+1. Power on the system.
+2. Startup animation is displayed.
+3. LCD prompts the user to scan an RFID card.
+4. The system verifies the RFID UID.
+5. If authorized:
+   - Displays the user's name
+   - Plays the assigned MP3 file
+   - Lights the green LED
+6. If unauthorized:
+   - Displays "Access Denied"
+   - Plays an error sound
+   - Lights the red LED
+7. During inactivity, the system automatically launches a Dinosaur Game.
+
+---
+
+## 🧠 Skills Demonstrated
+
+- Embedded Systems Programming
+- Arduino Programming
+- RFID Technology
+- Access Control Systems
+- LCD Programming
+- Audio Playback Integration
+- Hardware Troubleshooting
+- C/C++ Programming
+- State Machine Logic
+- User Interface Design
 
 ---
 
 ## 📂 Repository Contents
 
 ```text
-Arduino_Disco_Countdown.ino
+RFID_Smart_MP3_Player.ino
 README.md
 ```
 
 ---
 
-## 🧠 Skills Demonstrated
 
-- Arduino Programming
-- Embedded Systems
-- Digital Electronics
+## 📚 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- RFID Authentication
+- Microcontroller Programming
 - Hardware Integration
-- Circuit Design
-- Debugging
-- C/C++ Programming
-
----
-
-## 📚 What I Learned
-
-- Working with Arduino digital outputs
-- Controlling LEDs and buzzers
-- Using functions for cleaner code
-- Programming timing and sequences
-- Integrating multiple hardware components
+- LCD Interface Development
+- Audio Module Integration
+- Event-driven Programming
+- Embedded Software Design
+- Debugging Electronic Systems
 
 ---
 
@@ -106,6 +139,7 @@ README.md
 **Angelico Joshua**
 
 Bachelor of Science in Information Technology (BSIT)
+
 
 ---
 
